@@ -1,6 +1,9 @@
 import { Recipe } from './recipe.model';
+import { EventEmitter } from '@angular/core';
 
 export class RecipeService {
+    recipeSelected = new EventEmitter<Recipe>();
+
     private recipes: Recipe[] = [
         new Recipe('A Test Recipe', 'This is simply a test',
         'https://assets.bonappetit.com/photos/5d7296eec4af4d0008ad1263/3:2/w_2560,c_limit/Basically-Gojuchang-Chicken-Recipe-Wide.jpg'),
@@ -11,4 +14,6 @@ export class RecipeService {
     getRecipes() {
         return this.recipes.slice();
     }
+
+
 }
