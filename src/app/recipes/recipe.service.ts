@@ -17,8 +17,10 @@ export class RecipeService {
             ]),
         new Recipe(
             'Piri-piri chicken with smashed sweet potatoes & broccoli',
-            'Serve up an easy one-pan traybake of piri-piri chicken with sweet potatoes and broccoli. As well as being simple to make, it delivers three of your 5-a-day',
-            'https://www.bbcgoodfood.com/sites/default/files/styles/recipe/public/recipe/recipe-image/2020/02/piri-piri-chicken-with-smashed-sweet-potatoes-broccoli.jpg?itok=2cCr3I7C',
+            'Serve up an easy one-pan traybake of piri-piri chicken with sweet potatoes and ' +
+            'broccoli. As well as being simple to make, it delivers three of your 5-a-day',
+            'https://www.bbcgoodfood.com/sites/default/files/styles/recipe/public/' +
+                'recipe/recipe-image/2020/02/piri-piri-chicken-with-smashed-sweet-potatoes-broccoli.jpg?itok=2cCr3I7C',
             [
                 new Ingredient('Buns', 2),
                 new Ingredient('Meat', 1)
