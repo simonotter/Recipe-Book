@@ -5,8 +5,10 @@ import { Component, OnInit } from '@angular/core';
     templateUrl: './auth.template.html'
 })
 
-export class AuthComponent implements OnInit {
-    constructor() { }
+export class AuthComponent {
+    isLoginMode = true;
 
-    ngOnInit() { }
+    onSwitchMode() {
+        this.isLoginMode = !this.isLoginMode;
+    }
 }
