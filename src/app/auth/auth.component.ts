@@ -17,6 +17,7 @@ export class AuthComponent {
     isLoginMode = true;
     isLoading = false;
     error: string = null;
+    hide = true;
 
     constructor(private authService: AuthService, private router: Router) {}
 

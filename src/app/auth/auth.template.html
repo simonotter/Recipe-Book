@@ -20,7 +20,7 @@
                     email
                 />
             </div> -->
-            <mat-form-field class="example-full-width">
+            <mat-form-field class="example-full-width"  appearance="outline">
                 <mat-label>Email</mat-label>
                 <input
                     matInput placeholder="e.g. my.name@email.com"
@@ -44,24 +44,37 @@
                     minlength="6"
                 />
             </div> -->
-            <mat-form-field class="example-full-width">
+            <mat-form-field class="example-full-width" appearance="outline">
                 <mat-label>Password</mat-label>
                 <input
                     matInput
-                    type="password"
+                    [type]="hide ? 'password' : 'text'"
                     id="password"
                     name="password"
                     ngModel
                     required
                     minlength="6"
                 >
+                <button
+                    mat-icon-button matSuffix
+                    (click)="hide = !hide"
+                    [attr.aria-label]="'Hide password'"
+                    [attr.aria-pressed]="hide">
+                    <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                </button>
             </mat-form-field>
             <div>
-                <button class="btn btn-primary" type="submit" [disabled]="!authForm.valid">
+                <button
+                    mat-raised-button color="primary"
+                    type="submit"
+                    [disabled]="!authForm.valid">
                     {{ isLoginMode ? 'Login' : 'Sign Up' }}
                 </button>
                 |
-                <button class="btn btn-primary" type="button" (click)=onSwitchMode()>
+                <button
+                    mat-raised-button color="accent"
+                    type="button"
+                    (click)=onSwitchMode()>
                     Switch to {{ isLoginMode ? 'Sign Up' : 'Login' }}</button>
             </div>
         </form>
