@@ -10,7 +10,7 @@ import { AuthResponseData } from './auth.service';
 @Component({
     selector: 'app-auth',
     templateUrl: './auth.template.html',
-    styleUrls: ['./auth.template.css']
+    styleUrls: ['./auth.template.scss']
 })
 
 export class AuthComponent {

@@ -1,0 +1,77 @@
+/* Add application styles & imports to this file! */
+@import '~@angular/material/theming';
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
+$mat-recipebook-primary: (
+    50 : #e7efe4,
+    100 : #c3d6bb,
+    200 : #9cbb8e,
+    300 : #749f61,
+    400 : #568b3f,
+    500 : #38761d,
+    600 : #326e1a,
+    700 : #2b6315,
+    800 : #245911,
+    900 : #17460a,
+    A100 : #94ff7d,
+    A200 : #6aff4a,
+    A400 : #40ff17,
+    A700 : #2dfc00,
+    contrast: (
+        50 : #000000,
+        100 : #000000,
+        200 : #000000,
+        300 : #000000,
+        400 : #ffffff,
+        500 : #ffffff,
+        600 : #ffffff,
+        700 : #ffffff,
+        800 : #ffffff,
+        900 : #ffffff,
+        A100 : #000000,
+        A200 : #000000,
+        A400 : #000000,
+        A700 : #000000,
+    )
+);
+
+$mat-recipebook-accent: (
+    50 : #fdecf5,
+    100 : #f9cfe5,
+    200 : #f6afd4,
+    300 : #f28ec2,
+    400 : #ef76b5,
+    500 : #ec5ea8,
+    600 : #ea56a0,
+    700 : #e74c97,
+    800 : #e4428d,
+    900 : #df317d,
+    A100 : #ffffff,
+    A200 : #fff0f6,
+    A400 : #ffbdd8,
+    A700 : #ffa3c9,
+    contrast: (
+        50 : #000000,
+        100 : #000000,
+        200 : #000000,
+        300 : #000000,
+        400 : #000000,
+        500 : #000000,
+        600 : #000000,
+        700 : #000000,
+        800 : #ffffff,
+        900 : #ffffff,
+        A100 : #000000,
+        A200 : #000000,
+        A400 : #000000,
+        A700 : #000000,
+    )
+);
+
+$primary: mat-palette($mat-recipebook-primary);
+$accent: mat-palette($mat-recipebook-accent);
+
+$theme: mat-light-theme($primary, $accent);
+
+@include angular-material-theme($theme);
+

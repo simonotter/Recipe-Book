@@ -6,7 +6,7 @@ import { map, shareReplay } from 'rxjs/operators';
 @Component({
   selector: 'app-mat-header',
   templateUrl: './mat-header.component.html',
-  styleUrls: ['./mat-header.component.css']
+  styleUrls: ['./mat-header.component.scss']
 })
 export class MatHeaderComponent {
 
