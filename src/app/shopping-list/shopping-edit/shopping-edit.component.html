@@ -3,25 +3,49 @@
         <form (ngSubmit)="onSubmit(f)" #f="ngForm">
             <div class="row">
                 <div class="col-sm-5 form-group">
-                    <label for="name">Name</label>
+                    <!-- <label for="name">Name</label>
                     <input
                         type="text"
                         id="name"
                         class="form-control"
                         name="name"
                         ngModel
-                        required>
+                        required> -->
+                
+                    <mat-form-field class="example-full-width" appearance="outline">
+                        <mat-label>Ingredient</mat-label>
+                        <input
+                            matInput
+                            ngModel
+                            type="text"
+                            id="name"
+                            name="name"
+                            placeholder="E.g. Eggs"
+                            required>
+                        <mat-hint>What do you need?</mat-hint>       
+                    </mat-form-field>
                 </div>
-                <div class="col-sm-2 form-group">
-                    <label for="amount">Amount</label>
+                <div class="col-sm-3 form-group">
+                    <!-- <label for="amount">Amount</label>
                     <input 
                         type="number" 
                         id="amount" 
-                        class="form-control"
                         name="amount"
                         ngModel
                         required
-                        pattern="^[1-9]+[0-9]*$">
+                        pattern="^[1-9]+[0-9]*$"> -->
+                    <mat-form-field class="example-full-width" appearance="outline">
+                        <mat-label>Amount</mat-label>
+                        <input
+                            matInput
+                            ngModel
+                            type="number"
+                            id="amount"
+                            name="amount"
+                            placeholder=""
+                            required>
+                        <mat-hint>How much?</mat-hint>       
+                    </mat-form-field>
                 </div>
             </div>
             <div class="row">
