@@ -8,7 +8,7 @@
             <app-loading-spinner></app-loading-spinner>
         </div>
         <form #authForm="ngForm" (ngSubmit)="onSubmit(authForm)" *ngIf="!isLoading">
-            <div class="form-group">
+            <!-- <div class="form-group">
                 <label for="email">Email</label>
                 <input
                     type="email"
@@ -19,8 +19,20 @@
                     required
                     email
                 />
-            </div>
-            <div class="form-group">
+            </div> -->
+            <mat-form-field class="example-full-width">
+                <mat-label>Email</mat-label>
+                <input
+                    matInput placeholder="e.g. my.name@email.com"
+                    type="email"
+                    id="email"
+                    ngModel
+                    name="email"
+                    required
+                    email
+                >
+            </mat-form-field>
+            <!-- <div class="form-group">
                 <label for="password">Password</label>
                 <input
                     type="password"
@@ -31,7 +43,19 @@
                     required
                     minlength="6"
                 />
-            </div>
+            </div> -->
+            <mat-form-field class="example-full-width">
+                <mat-label>Password</mat-label>
+                <input
+                    matInput
+                    type="password"
+                    id="password"
+                    name="password"
+                    ngModel
+                    required
+                    minlength="6"
+                >
+            </mat-form-field>
             <div>
                 <button class="btn btn-primary" type="submit" [disabled]="!authForm.valid">
                     {{ isLoginMode ? 'Login' : 'Sign Up' }}
