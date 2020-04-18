@@ -1,38 +1,34 @@
 <div class="row">
     <div class="col-xs 12">
-        <form [formGroup]="recipeForm" (ngSubmit)="onSubmit()">
+        <form [formGroup]="recipeForm" (ngSubmit)="onSubmit()" class="example-form">
+            <h2>Enter a new recipe</h2>
             <div class="row">
                 <div class="col-xs-12">
-                    <button
-                        type="submit"
-                        class="btn btn-success"
-                        [disabled]="!recipeForm.valid">Save</button>
-                    <button type="button" class="btn btn-danger" (click)=onCancel()>Cancel</button>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-xs-12">
-                    <div class="form-group">
-                        <label for="name">Name</label>
+                    <mat-form-field class="example-full-width" appearance="outline">
+                        <mat-label>Name</mat-label>
                         <input
+                            matInput
                             type="text"
                             id="name"
                             formControlName="name"
-                            class="form-control">
-                    </div>
+                            placeholder="E.g. Pizza">
+                        <mat-hint>Give your recipe an explanatory name.</mat-hint>       
+                    </mat-form-field>
                 </div>
             </div>
             <div class="row">
                 <div class="col-xs-12">
-                    <div class="form-group">
-                        <label for="imagePath">Image URL</label>
+                    <mat-form-field class="example-full-width" appearance="outline">
+                        <mat-label>Image URL</mat-label>
                         <input
+                            matInput
                             type="text"
                             id="imagePath"
                             formControlName="imagePath"
-                            class="form-control"
+                            placeholder="E.g. http://www.example.com/recipeImage.jpg"
                             #imagePath>
-                    </div>
+                        <mat-hint>Link to an image of the recipe stored elsewhere on the web.</mat-hint>
+                    </mat-form-field> 
                 </div>
             </div>
             <div class="row">
@@ -43,38 +39,61 @@
             <div class="row">
                 <div class="col-xs-12">
                     <div class="form-group">
-                        <label for="description">Description</label>
-                        <textarea
-                            type="text"
-                            id="description"
-                            formControlName="description"
-                            class="form-control"
-                            rows="6"></textarea>
+                        <mat-form-field class="example-full-width" appearance="outline">
+                            <mat-label>Description</mat-label>
+                            <textarea
+                                matInput
+                                type="text"
+                                id="description"
+                                formControlName="description"
+                                rows="6"
+                                placeholder="Describe your receipe">
+                            </textarea>
+                            <mat-hint>Give a good detailed description of your recipe.</mat-hint> 
+                        </mat-form-field>
                     </div>
                 </div>
             </div>
             <div class="row">
                 <div class="col-xs-12" formArrayName="ingredients">
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <button
+                                mat-raised-button
+                                color="primary"
+                                type="button"
+                                class="btn btn-success"
+                                (click)="onAddIngredient()">Add Ingredient</button>
+                        </div>
+                    </div>
                     <div 
                         class="row"
                         *ngFor="let ingredientCtrl of controls; let i= index"
                         [formGroupName]="i"
                         style="margin-top: 10px">
                         <div class="col-xs-8">
-                            <input
-                                type="text"
-                                class="form-control"
-                                formControlName="name">
+                            <mat-form-field class="example-full-width" appearance="outline">
+                                <mat-label>Ingredient</mat-label>
+                                <input
+                                    matInput
+                                    type="text"
+                                    formControlName="name">
+                            </mat-form-field>
                         </div>
                         <div class="col-xs-2">
-                            <input
-                                type="number"
-                                class="form-control"
-                                formControlName="amount">
+                            <mat-form-field class="example-full-width" appearance="outline">
+                                <mat-label>Qty</mat-label>
+                                <input
+                                    matInput
+                                    type="number"
+                                    class="example-right-align"
+                                    formControlName="amount">
+                            </mat-form-field>
                         </div>
                         <div class="col-xs-2">
                             <button
-                                class="btn btn-danger"
+                                mat-raised-button
+                                color="warn"
                                 type="button"
                                 (click)="onDeleteIngredient(i)">
                                 <svg class="bi bi-trash-fill" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
@@ -83,15 +102,20 @@
                             </button>
                         </div>
                     </div>
-                    <hr>
-                    <div class="row">
-                        <div class="col-xs-12">
-                            <button 
-                                type="button"
-                                class="btn btn-success"
-                                (click)="onAddIngredient()">Add Ingredient</button>
-                        </div>
-                    </div>
+                </div>
+            </div>
+            <div class="example-button-row">
+                <div class="col-xs-12">
+                    <button
+                        type="submit"
+                        mat-raised-button
+                        color="accent"
+                        [disabled]="!recipeForm.valid">Save</button>
+                    <button
+                        type="button"
+                        mat-raised-button
+                        color="warn"
+                        (click)=onCancel()>Cancel</button>
                 </div>
             </div>
         </form>
