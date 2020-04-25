@@ -6,8 +6,6 @@ import { AppComponent } from './app.component';
 import { CoreModule } from './core.module';
 import { SharedModule } from './shared/shared.module';
 import { HeaderComponent } from './header/header.component';
-import { AuthModule } from './auth/auth.module';
-import { ShoppingListModule } from './shopping-list/shopping-list.module';
 import { AppRoutingModule } from './app-routing.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatHeaderComponent } from './mat-header/mat-header.component';
@@ -27,8 +25,6 @@ import { AppMaterialModule } from './app-material/app-material.module';
     AppRoutingModule,
     CoreModule,
     SharedModule,
-    AuthModule,
-    ShoppingListModule,
     BrowserAnimationsModule,
     LayoutModule,
     AppMaterialModule
