@@ -4,6 +4,7 @@ import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 
 import { SharedModule } from '../shared/shared.module';
+import { AppMaterialModule } from '../app-material/app-material.module';
 import { AuthComponent } from './auth.component';
 
 
@@ -17,7 +18,8 @@ import { AuthComponent } from './auth.component';
         RouterModule.forChild([
             { path: 'auth', component: AuthComponent}
         ]),
-        SharedModule
+        SharedModule,
+        AppMaterialModule
     ]
 })
 export class AuthModule {}
