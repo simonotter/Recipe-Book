@@ -4,18 +4,16 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
+import { SharedModule } from './shared/shared.module';
 import { HeaderComponent } from './header/header.component';
 import { RecipesModule } from './recipes/recipes.module';
 import { ShoppingListModule } from './shopping-list/shopping-list.module';
-import { DropdownDirective } from './shared/dropdown.directive';
 import { ShoppingListService } from './shopping-list/shopping-list.service';
 import { AppRoutingModule } from './app-routing.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RecipeService } from './recipes/recipe.service';
 import { AuthComponent } from './auth/auth.component';
-import { LoadingSpinnerComponent } from './shared/loading-spinner/loading-spinner.component';
 import { AuthInterceptorService } from './auth/auth-interceptor.service';
-import { AlertComponent } from './shared/alert/alert.component';
 import { MatHeaderComponent } from './mat-header/mat-header.component';
 import { LayoutModule } from '@angular/cdk/layout';
 import { AppMaterialModule } from './app-material/app-material.module';
@@ -25,10 +23,7 @@ import { AppMaterialModule } from './app-material/app-material.module';
   declarations: [
     AppComponent,
     HeaderComponent,
-    DropdownDirective,
     AuthComponent,
-    LoadingSpinnerComponent,
-    AlertComponent,
     MatHeaderComponent
   ],
   imports: [
@@ -37,6 +32,7 @@ import { AppMaterialModule } from './app-material/app-material.module';
     ReactiveFormsModule,
     HttpClientModule,
     AppRoutingModule,
+    SharedModule,
     RecipesModule,
     ShoppingListModule,
     BrowserAnimationsModule,
