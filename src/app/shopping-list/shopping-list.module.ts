@@ -17,7 +17,7 @@ import { ShoppingEditComponent } from './shopping-edit/shopping-edit.component';
         FormsModule,
         AppMaterialModule,
         RouterModule.forChild([
-            { path: 'shopping-list', component: ShoppingListComponent},
+            { path: '', component: ShoppingListComponent}, // Empty path, as lazy loaded
         ]),
         SharedModule
     ]

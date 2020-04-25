@@ -16,7 +16,7 @@ import { AuthComponent } from './auth.component';
         CommonModule,
         FormsModule,
         RouterModule.forChild([
-            { path: 'auth', component: AuthComponent}
+            { path: '', component: AuthComponent} // Empty path, as lazy loaded
         ]),
         SharedModule,
         AppMaterialModule
