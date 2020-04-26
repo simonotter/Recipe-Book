@@ -9,7 +9,6 @@ import { HeaderComponent } from './header/header.component';
 import { AppRoutingModule } from './app-routing.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatHeaderComponent } from './mat-header/mat-header.component';
-import { LayoutModule } from '@angular/cdk/layout';
 import { AppMaterialModule } from './app-material/app-material.module';
 
 
@@ -26,7 +25,6 @@ import { AppMaterialModule } from './app-material/app-material.module';
     CoreModule,
     SharedModule,
     BrowserAnimationsModule,
-    LayoutModule,
     AppMaterialModule
   ],
   bootstrap: [AppComponent]
