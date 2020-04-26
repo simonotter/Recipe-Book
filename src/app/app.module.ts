@@ -5,7 +5,6 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { CoreModule } from './core.module';
 import { SharedModule } from './shared/shared.module';
-import { HeaderComponent } from './header/header.component';
 import { AppRoutingModule } from './app-routing.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatHeaderComponent } from './mat-header/mat-header.component';
@@ -15,7 +14,6 @@ import { AppMaterialModule } from './app-material/app-material.module';
 @NgModule({
   declarations: [
     AppComponent,
-    HeaderComponent,
     MatHeaderComponent
   ],
   imports: [
