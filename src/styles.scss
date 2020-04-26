@@ -2,6 +2,8 @@
 @import '~@angular/material/theming';
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
 
+html, body { height: 100%; }
+
 $mat-recipebook-primary: (
     50 : #f4faf4,
     100 : #e4f3e5,
