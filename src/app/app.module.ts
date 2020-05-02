@@ -2,7 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { StoreModule } from '@ngrx/store';
-import { shoppingListReducer } from './shopping-list/store/shopping-list.reducer';
+import * as fromApp from './store/app.reducer';
 
 import { AppComponent } from './app.component';
 import { CoreModule } from './core.module';
@@ -23,7 +23,7 @@ import { AppMaterialModule } from './app-material/app-material.module';
     HttpClientModule,
     AppRoutingModule,
     CoreModule,
-    StoreModule.forRoot({shoppingList: shoppingListReducer}),
+    StoreModule.forRoot(fromApp.appReducer),
     SharedModule,
     BrowserAnimationsModule,
     AppMaterialModule
