@@ -5,6 +5,7 @@
       [opened]="(isHandset$ | async) === false">
     <mat-toolbar>Menu</mat-toolbar>
     <mat-nav-list>
+      <!-- todo: fix drawer closing on wide screens -->
       <a mat-list-item *ngIf="!isAuthenticated" routerLink="/auth" (click)="drawer.close()">Authenticate</a>
       <a mat-list-item *ngIf="isAuthenticated" routerLink="/recipes" (click)="drawer.close()">Recipes</a>
       <a mat-list-item routerLink="/shopping-list">Shopping List</a>
