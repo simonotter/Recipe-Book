@@ -135,10 +135,10 @@ export class AuthService {
         // this.user.next(user);
         this.store.dispatch(
             new AuthActions.Login({
-                email: email,
-                userId: userId,
-                token: token,
-                expirationDate: expirationDate
+                email, // moved from email: email to object-literal-shorthand
+                userId, // moved from userId: userId to object-literal-shorthand
+                token, // moved from token: token to object-literal-shorthand
+                expirationDate // moved from expirtationDate: expirationDate to object-literal-shorthand
             })
         );
         this.autoLogout(expiresIn * 1000);
