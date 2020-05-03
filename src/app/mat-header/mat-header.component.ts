@@ -2,9 +2,11 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { Observable, Subscription } from 'rxjs';
 import { map, shareReplay } from 'rxjs/operators';
+import { Store } from '@ngrx/store';
 
 import { AuthService } from '../auth/auth.service';
 import { DataStorageService } from '../shared/data-storage.service';
+import * as fromAppStore from '../store/app.reducer';
 
 @Component({
   selector: 'app-mat-header',
@@ -18,7 +20,8 @@ export class MatHeaderComponent implements OnInit, OnDestroy {
   constructor(
     private breakpointObserver: BreakpointObserver,
     private authService: AuthService,
-    private dataStorageService: DataStorageService) {}
+    private dataStorageService: DataStorageService,
+    private store: Store<fromAppStore.AppState>) {}
 
   isHandset$: Observable<boolean> = this.breakpointObserver.observe(Breakpoints.Handset)
     .pipe(
@@ -27,7 +30,10 @@ export class MatHeaderComponent implements OnInit, OnDestroy {
     );
 
   ngOnInit() {
-    this.userSub = this.authService.user.subscribe(user => {
+    this.userSub = this.store
+      .select('auth')
+      .pipe(map(authState => authState.user))
+      .subscribe(user => {
         this.isAuthenticated = !user ? false : true;
     });
   }
