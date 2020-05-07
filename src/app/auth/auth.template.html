@@ -1,26 +1,11 @@
 <h2>Login or Sign Up</h2>
 <div class="row">
     <div class="col-xs-12 col-md-6 col-md-offset-3">
-        <!-- <div class="alert alert-danger" *ngIf="error">
-            <p>{{ error }}</p>
-        </div> -->
         <app-alert [message]="error" *ngIf="error" (close)="onHandleError()"></app-alert>
         <div *ngIf="isLoading" style="text-align: center;">
             <app-loading-spinner></app-loading-spinner>
         </div>
         <form #authForm="ngForm" (ngSubmit)="onSubmit(authForm)" *ngIf="!isLoading">
-            <!-- <div class="form-group">
-                <label for="email">Email</label>
-                <input
-                    type="email"
-                    id="email"
-                    class="form-control"
-                    ngModel
-                    name="email"
-                    required
-                    email
-                />
-            </div> -->
             <mat-form-field class="example-full-width"  appearance="outline">
                 <mat-label>Email</mat-label>
                 <input
@@ -33,19 +18,7 @@
                     email
                 >
             </mat-form-field>
-            <!-- <div class="form-group">
-                <label for="password">Password</label>
-                <input
-                    type="password"
-                    id="password"
-                    class="form-control"
-                    name="password"
-                    ngModel
-                    required
-                    minlength="6"
-                />
-            </div> -->
-            <mat-form-field class="example-full-width" appearance="outline">
+             <mat-form-field class="example-full-width" appearance="outline">
                 <mat-label>Password</mat-label>
                 <input
                     matInput

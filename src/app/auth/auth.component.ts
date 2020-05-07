@@ -1,7 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
-import { Observable } from 'rxjs';
+import { Observable, Subscription } from 'rxjs';
 import { Store } from '@ngrx/store';
 
 import { AuthService } from './auth.service';
@@ -16,11 +16,13 @@ import * as AuthActions from './store/auth.actions';
     styleUrls: ['./auth.template.scss']
 })
 
-export class AuthComponent implements OnInit {
+export class AuthComponent implements OnInit, OnDestroy {
     isLoginMode = true; // not managed by NgRx as only used on this form
     isLoading = false;
     error: string = null;
     hide = true;
+
+    private storeSub: Subscription;
 
     constructor(
         private authService: AuthService,
@@ -28,12 +30,9 @@ export class AuthComponent implements OnInit {
         private store: Store<fromApp.AppState>) {}
 
     ngOnInit() {
-        this.store.select('auth').subscribe(authState => {
+        this.storeSub = this.store.select('auth').subscribe(authState => {
             this.isLoading = authState.loading;
             this.error = authState.authError;
-            // if (this.error) {
-            //     this.showErrorAlert(this.error);
-            // }
         });
     }
 
@@ -62,6 +61,12 @@ export class AuthComponent implements OnInit {
     }
 
     onHandleError() {
-        this.error = null;
+        this.store.dispatch(new AuthActions.ClearError());
+    }
+
+    ngOnDestroy() {
+        if (this.storeSub) {
+            this.storeSub.unsubscribe();
+        }
     }
 }
