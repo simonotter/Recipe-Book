@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import * as fromApp from './store/app.reducer';
 
 import { AppComponent } from './app.component';
@@ -13,6 +14,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatHeaderComponent } from './mat-header/mat-header.component';
 import { AppMaterialModule } from './app-material/app-material.module';
 import { AuthEffects } from './auth/store/auth.effects';
+import { environment } from '../environments/environment';
 
 
 @NgModule({
@@ -26,6 +28,7 @@ import { AuthEffects } from './auth/store/auth.effects';
     AppRoutingModule,
     CoreModule,
     StoreModule.forRoot(fromApp.appReducer),
+    StoreDevtoolsModule.instrument({ logOnly: environment.production }),
     EffectsModule.forRoot([AuthEffects]),
     SharedModule,
     BrowserAnimationsModule,

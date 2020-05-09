@@ -1,6 +1,6 @@
 import { Action } from '@ngrx/store';
 
-export const LOGIN_START = '[Auth] Lgin Start';
+export const LOGIN_START = '[Auth] Login Start';
 export const AUTHENTICATE_SUCCESS = '[Auth] Login';
 export const AUTHENTICATE_FAIL = '[Auth] Login Fail';
 export const SIGNUP_START = '[Auth] Signup Start';
