@@ -4,6 +4,7 @@ import { AuthService } from './auth/auth.service';
 
 import * as fromApp from './store/app.reducer';
 import * as AuthActions from './auth/store/auth.actions';
+import { MatHeaderComponent } from './mat-header/mat-header.component';
 
 @Component({
   selector: 'app-root',
