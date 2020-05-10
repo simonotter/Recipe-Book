@@ -14,6 +14,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatHeaderComponent } from './mat-header/mat-header.component';
 import { AppMaterialModule } from './app-material/app-material.module';
 import { AuthEffects } from './auth/store/auth.effects';
+import { RecipeEffects } from './recipes/store/recipe.effects';
 import { environment } from '../environments/environment';
 
 
@@ -29,7 +30,7 @@ import { environment } from '../environments/environment';
     CoreModule,
     StoreModule.forRoot(fromApp.appReducer),
     StoreDevtoolsModule.instrument({ logOnly: environment.production }),
-    EffectsModule.forRoot([AuthEffects]),
+    EffectsModule.forRoot([AuthEffects, RecipeEffects]),
     SharedModule,
     BrowserAnimationsModule,
     AppMaterialModule
